@@ -14,66 +14,99 @@ import {
 
 function Experience() {
   const experiences = [
-    {
-      company: "QTrams IT Solutions Pvt. Ltd.",
-      role: "Software Engineer",
-      duration: "Jul 2025 - Present",
-      location: "Hyderabad, India",
-      description: [
-        "Developing enterprise healthcare applications for the MIYO Health Platform.",
-        "Built scalable REST APIs using NestJS, TypeScript & PostgreSQL.",
-        "Integrated Cube.js and AWS QuickSight analytics dashboards.",
-        "Optimized SQL queries and API performance by improving backend architecture.",
-        "Implemented authentication, RBAC and secure enterprise workflows.",
-      ],
-      tech: [
-        "React.js",
-        "javaScript",
-        "Node.js",
-        "Express.js",
-        "NestJS",
-        "PostgreSQL",
-        "Cube.js",
-        "AWS QuickSight",
-        "Prisma",
-        "MongoDB",
-        "TypeScript",
-        "LangChain",
-        "Ollama",
-        "ChromaDB",
-        "Embeddings",
-        "AI / GenAI",
-        "Docker",
-        "AWS",
-        "REST APIs",
-        "Git",
-        "Agile",
-      ],
-      current: true,
-    },
-    {
-      company: "Infoz IT Solutions",
-      role: "Full Stack Developer Intern",
-      duration: "Apr 2025 - Jun 2025",
-      location: "Hyderabad, India",
-      description: [
-        "Built responsive web applications using React.js.",
-        "Developed REST APIs using Express.js & Prisma.",
-        "Implemented JWT authentication and CRUD modules.",
-        "Worked with PostgreSQL, Git and Agile methodologies.",
-      ],
-      tech: [
-        "HTML",
-        "CSS",
-        "JavaScript", 
-        "React.js",
-        "Python",
-        "SQL",
-    
-      ],
-      current: false,
-    },
-  ];
+  {
+    company: "Tejoma Technologies Private Limited",
+    role: "Software Engineer | Full Stack Developer",
+    duration: "Aug 2026 - Present",
+    location: "Hyderabad, India",
+    description: [
+      "Developed a full-stack company website showcasing Tejoma's services and business offerings.",
+      "Built responsive frontend pages using React.js, JavaScript, HTML5, and CSS3.",
+      "Developed backend functionality and REST APIs using Node.js and Express.js.",
+      "Integrated frontend components with backend services and implemented application workflows.",
+      "Performed debugging, testing, and code improvements to enhance application reliability and maintainability.",
+    ],
+    tech: [
+      "AI / GenAI",
+      "React.js",
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "REST APIs",
+      "PostgreSQL",
+      "HTML5",
+      "CSS3",
+      "Git",
+      "GitHub",
+      "Docker",
+      "AWS",
+    ],
+    current: true,
+  },
+  {
+    company: "QTrams IT Solutions Pvt. Ltd.",
+    role: "Software Engineer | Full Stack Developer",
+    duration: "Jul 2025 - Jul 2026",
+    location: "Hyderabad, India",
+    description: [
+      "Contributed to the development and optimization of the MIYO Health Platform.",
+      "Developed and optimized NestJS REST APIs, improving API performance by 25%.",
+      "Built features for appointment scheduling, treatment management, and user administration.",
+      "Optimized PostgreSQL queries and integrated React.js frontend components with backend services.",
+      "Developed analytics dashboards using Cube.js and AWS QuickSight.",
+      "Supported data migration, debugging, testing, and Agile development practices.",
+    ],
+    tech: [
+  "React.js",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "NestJS",
+  "PostgreSQL",
+  "Cube.js",
+  "AWS QuickSight",
+  "Prisma",
+  "MongoDB",
+  "TypeScript",
+  "LangChain",
+  "Ollama",
+  "ChromaDB",
+  "Embeddings",
+  "AI / GenAI",
+  "Docker",
+  "AWS",
+  "REST APIs",
+  "Git",
+  "Agile",
+],
+    current: false,
+  },
+  {
+    company: "Infoz IT Solutions",
+    role: "Full Stack Developer Intern",
+    duration: "Apr 2025 - Jun 2025",
+    location: "Hyderabad, India",
+    description: [
+      "Built responsive web applications using Python, Django, HTML, CSS, JavaScript, and Bootstrap.",
+      "Developed REST APIs for authentication, CRUD operations, and business logic.",
+      "Worked with MySQL databases, validation, debugging, and application testing.",
+      "Used Git/GitHub and followed Agile development practices.",
+    ],
+    tech: [
+      "Python",
+      "Django",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap",
+      "MySQL",
+      "REST APIs",
+      "Git",
+    ],
+    current: false,
+  },
+];
 
   return (
     <section id="experience" className="section experience-section">
@@ -97,7 +130,11 @@ function Experience() {
                 <FaBriefcase />
               </div>
 
-              <div className="experience-layout">
+              <div
+  className={`experience-layout ${
+    index === 0 ? "no-images" : ""
+  }`}
+>
                 {/* Left Side */}
                 <div className="experience-card">
                   <div className="experience-top">
@@ -140,24 +177,32 @@ function Experience() {
                 </div>
 
                 {/* Right Side Images */}
-                <div className="experience-images">
-                  {index === 0 ? (
-                    <>
-                      <img src={experience1} alt="QTrams 1" />
-                      <img src={experience2} alt="QTrams 2" />
-                    </>
-                  ) : (
-                    <>
-                      <img src={experience3} alt="Infoz 1" />
-                      <img src={experience4} alt="Infoz 2" />
-                    </>
-                  )}
-                </div>
+                {index !== 0 && (
+  <div className="experience-images">
+    {index === 1 ? (
+      <>
+        <img src={experience1} alt="QTrams 1" />
+        <img src={experience2} alt="QTrams 2" />
+      </>
+    ) : (
+      <>
+        <img src={experience3} alt="Infoz 1" />
+        <img src={experience4} alt="Infoz 2" />
+      </>
+    )}
+  </div>
+
+                )}
               </div>
+
             </div>
+
           ))}
+
         </div>
+
       </div>
+
     </section>
   );
 }

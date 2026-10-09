@@ -3198,6 +3198,56 @@ font-size:1.2rem;
 }
 
 
+/* ==========================
+EXPERIENCE LAYOUT
+========================== */
+
+.experience-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 24px;
+    align-items: start;
+}
+
+/* Tejoma: Full-width card without images */
+.experience-layout.no-images {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.experience-layout.no-images .experience-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .experience-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .experience-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .experience-images img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-images img {
+        height: 120px;
+    }
+}
+
+
 /* ======================================================
 END
 ====================================================== */
+
+
